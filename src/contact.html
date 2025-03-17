@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100">
+
+    <nav class="w-full px-8 py-4 z-50 bg-transparent flex justify-end items-center">
+        <!-- Hamburger Menu (Right-aligned) -->
+        <button id="menu-toggle" class="block md:hidden text-gray-800 focus:outline-none absolute right-2">
+            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+    
+        <!-- Navigation Links -->
+        <ul id="menu" class="hidden md:flex md:space-x-6 bg-white md:bg-transparent absolute md:relative top-16 right-2 text-left md:top-0 md:right-auto w-[280px] md:w-auto md:flex-row flex-col md:space-x-6 md:space-y-0 space-y-4 p-6 md:p-0 shadow-lg md:shadow-none rounded-lg">
+            <li><a href="index.html" class="text-gray-800 text-sm font-semibold tracking-wide hover:text-gray-300 transition-all">Home</a></li>
+            <li><a href="accommodations.html" class="text-gray-800 text-sm font-semibold tracking-wide hover:text-gray-300 transition-all">Accommodations</a></li>
+            <li><a href="amenities.html" class="text-gray-800 text-sm font-semibold tracking-wide hover:text-gray-300 transition-all">Amenities</a></li>
+            <li><a href="booking.html" class="text-gray-800 text-sm font-semibold tracking-wide hover:text-gray-300 transition-all">Book Now</a></li>
+            <li><a href="contact.html" class="text-gray-800 text-sm font-semibold tracking-wide hover:text-gray-300 transition-all">Contact</a></li>
+        </ul>
+    </nav>
+
+    <h1 class="hero-title text-gray-800 tracking-wide">
+        Contact Us at Emon Pulo
+    </h1>
+    <section class="py-6 px-8 max-w-4xl mx-auto text-center text-gray-800">
+        <p class="text-based">
+            No request is too great and no detail too small. We are also here to assist you before your trip at Amanpulo begins.
+        </p>
+    </section>
+
+    <div class="flex justify-center items-center mt-18 px-4">
+        <iframe 
+            class="w-full md:w-3/4 h-64 md:h-96 rounded-lg shadow-lg"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d295.2052634959109!2d120.13083578371553!3d14.771589394087073!2m3!1f0!2f39.43911642598801!3f0!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x3395df27dc3cef01%3A0x16297649de3a793d!2sEmon%20Pulo%20Beach%20Resort!5e1!3m2!1sen!2sph!4v1741967263363!5m2!1sen!2sph"
+            frameborder="0" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+
+    <form class="max-w-3xl mx-auto mt-8 px-6">
+        <!-- Enquiry Type -->
+        <label class="block text-lg font-medium mb-1">Enquiry Type</label>
+        <select class="w-full p-3 border border-gray-300 rounded-lg mb-4">
+            <option>Hotel Reservation Enquiry</option>
+            <option>Villa Reservation Enquiry</option>
+            <option>Experience Enquiry</option>
+            <option>Dining Enquiry</option>
+            <option>Wellness Enquiry</option>
+            <option>Celebrations Enquiry</option>
+        </select>
+    
+        <!-- Title, First Name, Last Name -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+            <div>
+                <label class="block text-lg font-medium mb-1">Title</label>
+                <input type="text" class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Mr./Ms./Dr.">
+            </div>
+            <div>
+                <label class="block text-lg font-medium mb-1">First Name</label>
+                <input type="text" class="w-full p-3 border border-gray-300 rounded-lg" placeholder="First Name">
+            </div>
+            <div>
+                <label class="block text-lg font-medium mb-1">Last Name</label>
+                <input type="text" class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Last Name">
+            </div>
+        </div>
+    
+        <!-- Email, Phone Number -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+            <div>
+                <label class="block text-lg font-medium mb-1">Email</label>
+                <input type="email" class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Email">
+            </div>
+            <div>
+                <label class="block text-lg font-medium mb-1">Phone Number</label>
+                <input type="text" class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Phone Number">
+            </div>
+        </div>
+    
+        <!-- Country/Region -->
+        <div class="mb-4">
+            <label class="block text-lg font-medium mb-1">Country/Region</label>
+            <select class="w-full p-3 border border-gray-300 rounded-lg">
+                <option>Philippines</option>
+                <option>United States</option>
+                <option>United Kingdom</option>
+                <option>Australia</option>
+                <option>Canada</option>
+                <option>Japan</option>
+                <option>France</option>
+                <option>Germany</option>
+                <option>Singapore</option>
+                <option>Others</option>
+            </select>
+        </div>
+    
+        <!-- Message -->
+        <label class="block text-lg font-medium mb-1">Message</label>
+        <textarea class="w-full p-3 border border-gray-300 rounded-lg mb-4" rows="4" placeholder="Your message"></textarea>
+    
+        <!-- Checkbox -->
+        <label class="flex items-center text-sm font-normal mb-4">
+            <input type="checkbox" class="mr-2">
+            Register to receive updates about exclusive experiences, events, new destinations, and more.
+        </label>
+    
+        <!-- Submit Button (Centered) -->
+        <div class="flex justify-center">
+            <button type="submit" class="bg-blue-600 text-white w-full sm:w-1/2 px-6 py-3 rounded-lg hover:bg-blue-700 transition-all">
+                Send Message
+            </button>
+        </div>
+    </form>
+    
+    <footer class="w-full bg-gray-900 text-white py-4 mt-10">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm">
+            <!-- Left Side -->
+            <p class="mb-2 md:mb-0">© 2025 Emon Pulo. All rights reserved.</p>
+    
+            <!-- Right Side -->
+            <div class="flex space-x-4">
+                <a href="#" class="hover:underline">Privacy Policy</a>
+                <a href="#" class="hover:underline">Terms of Service</a>
+                <a href="#" class="hover:underline">Sitemap</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+    
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>  
+</body>
+</html>

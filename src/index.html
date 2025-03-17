@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emon Pulo Beach Resort</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="hero">
+        <img src="https://beachresortfinder.com/resorts/emon-pulo-beach-resort/gallery/A01.jpg" alt="Emon Pulo Beach Resort">
+
+        <nav class="w-full px-8 py-4 z-50 bg-transparent flex justify-end items-center">
+            <!-- Hamburger Menu (Right-Aligned) -->
+            <button id="menu-toggle" class="block md:hidden text-white focus:outline-none absolute right-2">
+                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        
+        <!-- Navigation Links -->
+        <ul id="menu" class="hidden md:flex md:space-x-6 bg-white md:bg-transparent absolute md:relative top-16 right-2 text-left md:top-0 md:right-auto w-[280px] md:w-auto md:flex-row flex-col md:space-x-6 md:space-y-0 space-y-4 p-6 md:p-0 shadow-lg md:shadow-none rounded-lg">
+            <li><a href="index.html" class="text-gray-800 text-sm font-semibold tracking-wide hover:text-gray-300 transition-all">Home</a></li>
+            <li><a href="accommodations.html" class="text-gray-800 text-sm font-semibold tracking-wide hover:text-gray-300 transition-all">Accommodations</a></li>
+            <li><a href="amenities.html" class="text-gray-800 text-sm font-semibold tracking-wide hover:text-gray-300 transition-all">Amenities</a></li>
+            <li><a href="booking.html" class="text-gray-800 text-sm font-semibold tracking-wide hover:text-gray-300 transition-all">Book Now</a></li>
+            <li><a href="contact.html" class="text-gray-800 text-sm font-semibold tracking-wide hover:text-gray-300 transition-all">Contact</a></li>
+        </ul>
+        </nav>        
+
+        <div class="hero-content text-center px-4 md:px-0">
+            <h1 class="text-3xl md:text-5xl font-bold leading-tight">Emon Pulo Beach Resort</h1>
+            <p class="text-base sm:text-based md:text-lg lg:text-xl mt-2">San Antonio, Zambales</p>
+        </div>
+        
+
+    </header>
+
+    <section class="py-20 px-8 max-w-4xl mx-auto text-center text-gray-800">
+        <p class="text-based">
+            Tucked away along the pristine shores of Zambales, Emon Pulo Beach Resort offers a unique and secluded island getaway. 
+            With its stretch of powdery sand beach, clear waters, and lush tropical surroundings, Emon Pulo provides a serene atmosphere that leaves guests awestruck.
+        </p>
+        <p class="text-based mt-6">
+            Located on an island in Silanguin Cove, the place offers exclusivity and privacy to guests. Accessible only by boat, 
+            Emon Pulo promises a respite in paradise, away from crowded tourist destinations. Transportation to the resort is made convenient with boat pick-up services.
+        </p>
+        <p class="text-based mt-6">
+            The resort’s elegant villas and cottages provide the perfect blend of modern comforts and traditional Filipino architecture. 
+            Envisioned to be a modern Filipino-style tropical beach resort with a touch of home, Emon Pulo’s landscape and accommodations were designed with high regard for comfort, safety, and class.
+        </p>
+        <p class="text-based mt-6">
+            Emon Pulo in Zambales is more than just a destination; it is an opportunity for guests to unwind and reconnect with nature. 
+            This is one of the places you find yourself planning to go back to even before you leave.
+        </p>
+    </section>
+
+    <div class="grid grid-cols-3 gap-2 p-4">
+        <img src="https://beachresortfinder.com/resorts/emon-pulo-beach-resort/gallery/A01.jpg" alt="Emon Pulo Beach Resort" class="gallery-img">
+        <img src="https://beachresortfinder.com/resorts/emon-pulo-beach-resort/gallery/P01.jpg" alt="Emon Pulo Beach Resort" class="gallery-img">
+        <img src="https://beachresortfinder.com/resorts/emon-pulo-beach-resort/gallery/P02.jpg" alt="Emon Pulo Beach Resort" class="gallery-img">
+
+        <img src="https://beachresortfinder.com/resorts/emon-pulo-beach-resort/gallery/P03.jpg" alt="Emon Pulo Beach Resort" class="gallery-img">
+        <img src="https://beachresortfinder.com/resorts/emon-pulo-beach-resort/gallery/R01.jpg" alt="Emon Pulo Beach Resort" class="gallery-img">
+        <img src="https://beachresortfinder.com/resorts/emon-pulo-beach-resort/gallery/R02.jpg" alt="Emon Pulo Beach Resort" class="gallery-img">
+
+        <img src="https://amariahcove.com/images/Glamping/i.JPG" alt="Emon Pulo Beach Resort" class="gallery-img">
+        <img src="https://beachresortfinder.com/resorts/emon-pulo-beach-resort/gallery/R04.jpg" alt="Emon Pulo Beach Resort" class="gallery-img">
+        <img src="https://amariahcove.com/images/Kubo/a.jpg" alt="Emon Pulo Beach Resort" class="gallery-img">
+    </div>
+
+    <footer class="w-full bg-gray-900 text-white py-4 mt-10">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm">
+            <!-- Left Side -->
+            <p class="mb-2 md:mb-0">© 2025 Emon Pulo. All rights reserved.</p>
+    
+            <!-- Right Side -->
+            <div class="flex space-x-4">
+                <a href="#" class="hover:underline">Privacy Policy</a>
+                <a href="#" class="hover:underline">Terms of Service</a>
+                <a href="#" class="hover:underline">Sitemap</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+    
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>    
+
+</body>
+</html>

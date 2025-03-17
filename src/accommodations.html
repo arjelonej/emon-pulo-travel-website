@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accommodations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100">
+
+    <nav class="w-full px-8 py-4 z-50 bg-transparent flex justify-end items-center">
+        <!-- Hamburger Menu (Right-aligned) -->
+        <button id="menu-toggle" class="block md:hidden text-gray-800 focus:outline-none absolute right-2">
+            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+    
+        <!-- Navigation Links -->
+        <ul id="menu" class="hidden md:flex md:space-x-6 bg-white md:bg-transparent absolute md:relative top-16 right-2 text-left md:top-0 md:right-auto w-[280px] md:w-auto md:flex-row flex-col md:space-x-6 md:space-y-0 space-y-4 p-6 md:p-0 shadow-lg md:shadow-none rounded-lg">
+            <li><a href="index.html" class="text-gray-800 text-sm font-semibold tracking-wide hover:text-gray-300 transition-all">Home</a></li>
+            <li><a href="accommodations.html" class="text-gray-800 text-sm font-semibold tracking-wide hover:text-gray-300 transition-all">Accommodations</a></li>
+            <li><a href="amenities.html" class="text-gray-800 text-sm font-semibold tracking-wide hover:text-gray-300 transition-all">Amenities</a></li>
+            <li><a href="booking.html" class="text-gray-800 text-sm font-semibold tracking-wide hover:text-gray-300 transition-all">Book Now</a></li>
+            <li><a href="contact.html" class="text-gray-800 text-sm font-semibold tracking-wide hover:text-gray-300 transition-all">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="container mx-auto px-4 py-24">
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="relative group cursor-pointer" onclick="openModal('modalKubo')">
+                <img src="https://amariahcove.com/images/Kubo/a.jpg" alt="Kubo" class="w-full h-64 object-cover rounded-xl shadow-lg transition-transform duration-300 group-hover:scale-105">
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span class="bg-white text-black px-4 py-2 rounded-md shadow-md text-sm font-semibold">View Details</span>
+                </div>
+                <div class="mt-4 text-center">
+                    <h2 class="text-2xl font-bold font-playfair">Kubo</h2>
+                </div>
+            </div>
+
+            <div class="relative group cursor-pointer" onclick="openModal('modalPoolSide')">
+                <img src="https://amariahcove.com/images/PoolSide/h.jpg" alt="Pool Side" class="w-full h-64 object-cover rounded-xl shadow-lg transition-transform duration-300 group-hover:scale-105">
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span class="bg-white text-black px-4 py-2 rounded-md shadow-md text-sm font-semibold">View Details</span>
+                </div>
+                <div class="mt-4 text-center">
+                    <h2 class="text-2xl font-bold font-playfair">Pool Side</h2>
+                </div>
+            </div>
+
+            <div class="relative group cursor-pointer" onclick="openModal('modalTreeHouse')">
+                <img src="https://amariahcove.com/images/TreeHouse/m.jpg" alt="TreeHouse" class="w-full h-64 object-cover rounded-xl shadow-lg transition-transform duration-300 group-hover:scale-105">
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span class="bg-white text-black px-4 py-2 rounded-md shadow-md text-sm font-semibold">View Details</span>
+                </div>
+                <div class="mt-4 text-center">
+                    <h2 class="text-2xl font-bold font-playfair">Tree House</h2>
+                </div>
+            </div>
+
+            <div class="relative group cursor-pointer" onclick="openModal('modalGlamping')">
+                <img src="https://amariahcove.com/images/Glamping/1.jpg" alt="Glamping" class="w-full h-64 object-cover rounded-xl shadow-lg transition-transform duration-300 group-hover:scale-105">
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span class="bg-white text-black px-4 py-2 rounded-md shadow-md text-sm font-semibold">View Details</span>
+                </div>
+                <div class="mt-4 text-center">
+                    <h2 class="text-2xl font-bold font-playfair">Glamping</h2>
+                </div>
+            </div>
+
+            <div class="relative group cursor-pointer" onclick="openModal('modalCottage')">
+                <img src="https://amariahcove.com/images/AmariahCoveGallery/DSC_0066.jpg" alt="Cottage" class="w-full h-64 object-cover rounded-xl shadow-lg transition-transform duration-300 group-hover:scale-105">
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span class="bg-white text-black px-4 py-2 rounded-md shadow-md text-sm font-semibold">View Details</span>
+                </div>
+                <div class="mt-4 text-center">
+                    <h2 class="text-2xl font-bold font-playfair">Cottage</h2>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <div id="modalKubo" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+        <div class="bg-white w-full max-w-4xl max-h-[90vh] md:max-h-[80vh] rounded-lg shadow-lg overflow-y-auto relative flex flex-col">
+            <div class="flex justify-between items-center p-4 border-b bg-gray-100">
+                <h2 class="text-2xl font-bold text-gray-800">Kubo</h2>
+                <button onclick="closeModal('modalKubo')" class="text-gray-600 hover:text-gray-900 text-2xl">&times;</button>
+            </div>
+    
+            <div class="overflow-y-auto px-6 py-4 max-h-[60vh] md:max-h-[70vh]">
+                <div class="grid grid-cols-3 gap-2">
+                    <img src="https://amariahcove.com/images/Kubo/a.jpg" alt="Kubo 1" class="w-full h-[100px] object-cover rounded-md">
+                    <img src="https://amariahcove.com/images/Kubo/b.jpg" alt="Kubo 2" class="w-full h-[100px] object-cover rounded-md">
+                    <img src="https://amariahcove.com/images/Kubo/c.jpg" alt="Kubo 3" class="w-full h-[100px] object-cover rounded-md">
+                    <img src="https://amariahcove.com/images/Kubo/d.jpg" alt="Kubo 4" class="w-full h-[100px] object-cover rounded-md">
+                    <img src="https://amariahcove.com/images/Kubo/e.jpg" alt="Kubo 5" class="w-full h-[100px] object-cover rounded-md">
+                    <img src="https://amariahcove.com/images/Kubo/f.jpg" alt="Kubo 6" class="w-full h-[100px] object-cover rounded-md">
+                </div>
+    
+                <p class="text-gray-600 mt-4">
+                    Try our Kubo at Emon Pulo. Our Kubo has 2 Bedrooms (QUEEN SIZE BED & DOUBLE DECK BED). Each room has a 42" LED TV, air conditioning, and other amenities.
+                </p>
+    
+                <ul class="grid grid-cols-2 gap-2 text-gray-700 text-sm mt-2">
+                    <li>Number of Rooms: 2 Rooms per Kubo</li>
+                    <li>Max Capacity: 8 persons (4 per Room)</li>
+                </ul>
+            </div>
+    
+            <div class="p-4 border-t bg-gray-100 flex justify-between items-center">
+                <p class="text-2xl font-bold text-gray-800">Php 15,000.00</p>
+                <button onclick="window.location.href='booking.html'" class="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-700">
+                    Book Now
+                </button>  
+            </div>
+        </div>
+    </div>
+    
+
+    <div id="modalPoolSide" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+        <div class="bg-white w-full max-w-4xl max-h-[90vh] md:max-h-[80vh] rounded-lg shadow-lg overflow-y-auto relative flex flex-col">
+            <div class="flex justify-between items-center p-4 border-b bg-gray-100">
+                <h2 class="text-2xl font-bold text-gray-800">Pool Side</h2>
+                <button onclick="closeModal('modalPoolSide')" class="text-gray-600 hover:text-gray-900 text-2xl">&times;</button>
+            </div>
+    
+            <div class="overflow-y-auto px-6 py-4 max-h-[60vh] md:max-h-[70vh]">
+                <div class="grid grid-cols-3 gap-2">
+                    <img src="https://amariahcove.com/images/PoolSide/i.jpg" alt="PoolSide 1" class="w-full h-[100px] object-cover rounded-md">
+                    <img src="https://amariahcove.com/images/PoolSide/j.JPG" alt="PoolSide 2" class="w-full h-[100px] object-cover rounded-md">
+                    <img src="https://amariahcove.com/images/PoolSide/k.jpg" alt="PoolSide 3" class="w-full h-[100px] object-cover rounded-md">
+                    <img src="https://amariahcove.com/images/PoolSide/l.jpg" alt="PoolSide 4" class="w-full h-[100px] object-cover rounded-md">
+                    <img src="https://amariahcove.com/images/PoolSide/s.JPG" alt="PoolSide 5" class="w-full h-[100px] object-cover rounded-md">
+                    <img src="https://amariahcove.com/images/PoolSide/t.JPG" alt="PoolSide 6" class="w-full h-[100px] object-cover rounded-md">
+                </div>
+    
+                <p class="text-gray-600 mt-4">
+                    Our VIP Pool Side Rooms have a King-size Bed and a Sofa Bed, accommodating 2 to 3 persons per room.
+                    Each room includes Aircon, a 50" TV, Alexa Echo Show, and a private bathroom.
+                </p>
+    
+                <ul class="grid grid-cols-2 gap-2 text-gray-700 text-sm mt-2">
+                    <li>Number of Rooms: 12</li>
+                    <li>Max Capacity: 3 to 4 persons</li>
+                </ul>
+            </div>
+    
+            <div class="p-4 border-t bg-gray-100 flex justify-between items-center">
+                <p class="text-2xl font-bold text-gray-800">Php 15,000.00</p>
+                <button onclick="window.location.href='booking.html'" class="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-700">
+                    Book Now
+                </button>  
+            </div>
+        </div>
+    </div>    
+
+    <div id="modalTreeHouse" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+        <div class="bg-white w-full max-w-4xl max-h-[90vh] md:max-h-[80vh] rounded-lg shadow-lg overflow-y-auto relative flex flex-col">
+            <div class="flex justify-between items-center p-4 border-b bg-gray-100">
+                <h2 class="text-2xl font-bold text-gray-800">Tree House</h2>
+                <button onclick="closeModal('modalTreeHouse')" class="text-gray-600 hover:text-gray-900 text-2xl">&times;</button>
+            </div>
+    
+            <div class="overflow-y-auto px-6 py-4 flex-1">
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                    <img src="https://amariahcove.com/images/TreeHouse/n.jpg" alt="TreeHouse 1" class="w-full h-[120px] object-cover rounded-md">
+                    <img src="https://amariahcove.com/images/TreeHouse/o.jpg" alt="TreeHouse 2" class="w-full h-[120px] object-cover rounded-md">
+                    <img src="https://amariahcove.com/images/TreeHouse/p.jpg" alt="TreeHouse 3" class="w-full h-[120px] object-cover rounded-md">
+                    <img src="https://amariahcove.com/images/TreeHouse/r.jpg" alt="TreeHouse 4" class="w-full h-[100px] object-cover rounded-md">
+                    <img src="https://amariahcove.com/images/TreeHouse/s.jpg" alt="TreeHouse 5" class="w-full h-[100px] object-cover rounded-md">
+                    <img src="https://amariahcove.com/images/TreeHouse/v.jpg" alt="TreeHouse 6" class="w-full h-[100px] object-cover rounded-md">
+                </div>
+    
+                <p class="text-gray-600 mt-4">
+                    The Tree House offers a breathtaking view of the bay. It has a capacity of 2-3 persons in the Ocean View side 
+                    and 4 persons in the Garden View, both with air conditioning.
+                </p>
+    
+                <ul class="grid grid-cols-2 gap-2 text-gray-700 text-sm mt-2">
+                    <li>Number of Rooms: 2</li>
+                    <li>Max Capacity: 3-4 persons</li>
+                </ul>
+            </div>
+    
+            <div class="p-4 border-t bg-gray-100 flex justify-between items-center">
+                <p class="text-2xl font-bold text-gray-800">Php 15,000.00</p>
+                <button onclick="window.location.href='booking.html'" class="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-700">
+                    Book Now
+                </button>  
+            </div>
+        </div>
+    </div>
+    
+    <div id="modalGlamping" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+        <div class="bg-white w-full max-w-4xl max-h-[90vh] md:max-h-[80vh] rounded-lg shadow-lg overflow-y-auto relative flex flex-col">
+            <div class="flex justify-between items-center p-4 border-b bg-gray-100">
+                <h2 class="text-2xl font-bold text-gray-800">Glamping</h2>
+                <button onclick="closeModal('modalGlamping')" class="text-gray-600 hover:text-gray-900 text-2xl">&times;</button>
+            </div>
+    
+            <div class="overflow-y-auto px-6 py-4 flex-1">
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                    <img src="https://amariahcove.com/images/Glamping/2.jpg" alt="Glamping 1" class="w-full h-[120px] object-cover rounded-md">
+                    <img src="https://amariahcove.com/images/Glamping/4.jpg" alt="Glamping 2" class="w-full h-[120px] object-cover rounded-md">
+                    <img src="https://amariahcove.com/images/Glamping/6.jpg" alt="Glamping 3" class="w-full h-[120px] object-cover rounded-md">
+                    <img src="https://amariahcove.com/images/Glamping/7.jpg" alt="Glamping 4" class="w-full h-[100px] object-cover rounded-md">
+                    <img src="https://amariahcove.com/images/Glamping/a.JPG" alt="Glamping 5" class="w-full h-[100px] object-cover rounded-md">
+                    <img src="https://amariahcove.com/images/Glamping/e.JPG" alt="Glamping 6" class="w-full h-[100px] object-cover rounded-md">
+                </div>
+    
+                <p class="text-gray-600 mt-4">
+                    Our 25sqm Glamping Room offers luxury under the stars, with air conditioning, a private tub, and a personal restroom.
+                </p>
+    
+                <ul class="grid grid-cols-2 gap-2 text-gray-700 text-sm mt-2">
+                    <li>Number of Rooms: 2</li>
+                    <li>Max Capacity: 4 persons</li>
+                </ul>
+            </div>
+    
+            <div class="p-4 border-t bg-gray-100 flex justify-between items-center">
+                <p class="text-2xl font-bold text-gray-800">Php 15,000.00</p>
+                <button onclick="window.location.href='booking.html'" class="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-700">
+                    Book Now
+                </button>  
+            </div>
+        </div>
+    </div>
+    
+    <div id="modalCottage" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+        <div class="bg-white w-full max-w-4xl max-h-[90vh] md:max-h-[80vh] rounded-lg shadow-lg overflow-y-auto relative flex flex-col">
+            <div class="flex justify-between items-center p-4 border-b bg-gray-100">
+                <h2 class="text-2xl font-bold text-gray-800">Cottage</h2>
+                <button onclick="closeModal('modalCottage')" class="text-gray-600 hover:text-gray-900 text-2xl">&times;</button>
+            </div>
+    
+            <div class="overflow-y-auto px-6 py-4 flex-1">
+                <div class="w-full flex justify-center">
+                    <img src="https://amariahcove.com/images/AmariahCoveGallery/DSC_0066.jpg" alt="Cottage 1" class="w-full h-64 object-cover rounded-md mb-4">
+                </div>
+    
+                <p class="text-gray-600">
+                    Enjoy a relaxing **Day Tour at Emon Pulo**! Our Cottages are available so you can unwind and dine by the beach.
+                </p>
+    
+                <ul class="grid grid-cols-2 gap-2 text-gray-700 text-sm mt-2">
+                    <li>Number of Cottages: 5</li>
+                    <li>Max Capacity: 8 persons</li>
+                </ul>
+            </div>
+    
+            <div class="p-4 border-t bg-gray-100 flex justify-between items-center">
+                <p class="text-2xl font-bold text-gray-800">Php 1,500.00</p>
+                <button onclick="window.location.href='booking.html'" class="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-700">
+                    Book Now
+                </button>  
+            </div>
+        </div>
+    </div>
+    
+    <footer class="w-full bg-gray-900 text-white py-4 mt-10">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm">
+            <!-- Left Side -->
+            <p class="mb-2 md:mb-0">© 2025 Emon Pulo. All rights reserved.</p>
+    
+            <!-- Right Side -->
+            <div class="flex space-x-4">
+                <a href="#" class="hover:underline">Privacy Policy</a>
+                <a href="#" class="hover:underline">Terms of Service</a>
+                <a href="#" class="hover:underline">Sitemap</a>
+            </div>
+        </div>
+    </footer>    
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove("hidden");
+        }
+        
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add("hidden");
+        }
+
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+    
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>

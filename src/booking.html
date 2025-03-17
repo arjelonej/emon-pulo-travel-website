@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Now</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100">
+
+    <nav class="w-full px-8 py-4 z-50 bg-transparent flex justify-end items-center">
+        <!-- Hamburger Menu (Right-aligned) -->
+        <button id="menu-toggle" class="block md:hidden text-gray-800 focus:outline-none absolute right-2">
+            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+    
+        <!-- Navigation Links -->
+        <ul id="menu" class="hidden md:flex md:space-x-6 bg-white md:bg-transparent absolute md:relative top-16 right-2 text-left md:top-0 md:right-auto w-[280px] md:w-auto md:flex-row flex-col md:space-x-6 md:space-y-0 space-y-4 p-6 md:p-0 shadow-lg md:shadow-none rounded-lg">
+            <li><a href="index.html" class="text-gray-800 text-sm font-semibold tracking-wide hover:text-gray-300 transition-all">Home</a></li>
+            <li><a href="accommodations.html" class="text-gray-800 text-sm font-semibold tracking-wide hover:text-gray-300 transition-all">Accommodations</a></li>
+            <li><a href="amenities.html" class="text-gray-800 text-sm font-semibold tracking-wide hover:text-gray-300 transition-all">Amenities</a></li>
+            <li><a href="booking.html" class="text-gray-800 text-sm font-semibold tracking-wide hover:text-gray-300 transition-all">Book Now</a></li>
+            <li><a href="contact.html" class="text-gray-800 text-sm font-semibold tracking-wide hover:text-gray-300 transition-all">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="mt-20 flex justify-center items-center px-8">
+        <div class="w-full max-w-4xl flex flex-col md:flex-row bg-white shadow-lg rounded-lg overflow-hidden min-h-screen md:min-h-[550px]">
+
+            <!-- Image Section (Hidden on Small Screens) -->
+            <div class="w-full md:w-2/5 hidden md:flex">
+                <img src="https://amariahcove.com/images/TreeHouse/n.jpg" 
+                    alt="Resort Image" 
+                    class="w-full h-auto md:h-full object-cover">
+            </div>
+
+            <div class="w-full lg:w-3/5 p-6 lg:p-8 flex flex-col justify-between h-full">
+                <form class="w-full flex flex-col space-y-4"> 
+                <form onsubmit="return validateForm()">
+                    <div class="mb-2">
+                        <label class="block text-gray-700">Full Name</label>
+                        <input type="text" id="name" class="w-full p-2 border rounded mt-1" placeholder="Enter your full name">
+                    </div>
+                    <div class="mb-2">
+                        <label class="block text-gray-700">Contact Number</label>
+                        <input type="text" id="contact" class="w-full p-2 border rounded mt-1" placeholder="Enter your contact number" maxlength="10">
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-gray-700">Check-in Date</label>
+                            <input type="date" id="checkin" class="w-full p-2 border rounded mt-1">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700">Check-out Date</label>
+                            <input type="date" id="checkout" class="w-full p-2 border rounded mt-1">
+                        </div>
+                    </div>
+
+                    <!-- Rooms, Adults, Children -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="border p-3 rounded-lg text-center">
+                            <label class="text-gray-700 block mb-1">Rooms</label>
+                            <div class="flex items-center justify-center space-x-3">
+                                <button type="button" class="bg-gray-200 px-3 py-1 rounded-lg" onclick="changeValue('rooms', -1)">-</button>
+                                <span id="rooms">1</span>
+                                <button type="button" class="bg-gray-200 px-3 py-1 rounded-lg" onclick="changeValue('rooms', 1)">+</button>
+                            </div>
+                        </div>
+                        <div class="border p-3 rounded-lg text-center">
+                            <label class="text-gray-700 block mb-1">Adults</label>
+                            <div class="flex items-center justify-center space-x-3">
+                                <button type="button" class="bg-gray-200 px-3 py-1 rounded-lg" onclick="changeValue('adults', -1)">-</button>
+                                <span id="adults">1</span>
+                                <button type="button" class="bg-gray-200 px-3 py-1 rounded-lg" onclick="changeValue('adults', 1)">+</button>
+                            </div>
+                        </div>
+                        <div class="border p-3 rounded-lg text-center">
+                            <label class="text-gray-700 block mb-1">Children</label>
+                            <div class="flex items-center justify-center space-x-3">
+                                <button type="button" class="bg-gray-200 px-3 py-1 rounded-lg" onclick="changeValue('children', -1)">-</button>
+                                <span id="children">0</span>
+                                <button type="button" class="bg-gray-200 px-3 py-1 rounded-lg" onclick="changeValue('children', 1)">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <label class="block text-gray-700">Room Type</label>
+                        <select id="roomType" class="w-full p-2 border rounded mt-1">
+                            <option value="Kubo">Kubo</option>
+                            <option value="Pool Side">Pool Side</option>
+                            <option value="Tree House">Tree House</option>
+                            <option value="Glamping">Glamping</option>
+                            <option value="Cottage">Cottage</option>
+                        </select>
+                    </div>
+
+                    <div class="flex justify-center mt-6">
+                        <button type="submit" class="bg-blue-600 text-white w-full px-6 py-3 rounded-lg hover:bg-blue-700 transition-all">Book Now</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="w-full bg-gray-900 text-white py-4 mt-10">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm">
+            <!-- Left Side -->
+            <p class="mb-2 md:mb-0">© 2025 Emon Pulo. All rights reserved.</p>
+    
+            <!-- Right Side -->
+            <div class="flex space-x-4">
+                <a href="#" class="hover:underline">Privacy Policy</a>
+                <a href="#" class="hover:underline">Terms of Service</a>
+                <a href="#" class="hover:underline">Sitemap</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        function changeValue(id, change) {
+            let element = document.getElementById(id);
+            let value = parseInt(element.innerText) + change;
+
+            if (id === "adults" && value < 1) return;
+            if (value < 0) return;
+
+            element.innerText = value;
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const roomType = urlParams.get("room");
+
+            if (roomType) {
+                let roomSelect = document.getElementById("roomType");
+                if (roomSelect) {
+                    let options = roomSelect.options;
+                    for (let i = 0; i < options.length; i++) {
+                        if (options[i].value === roomType) {
+                            roomSelect.value = roomType;
+                            break;
+                        }
+                    }
+                }
+            }
+        });
+
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+    
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

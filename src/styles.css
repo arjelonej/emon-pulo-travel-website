@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+.font-playfair {
+    font-family: 'Playfair Display', serif;
+}
+
+.font-poppins {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100vw;
+    height: 75vh; /* Adjusted height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.hero img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Hero Wave Effect */
+.hero::after {
+    content: '';
+    background: url('images/hero-waving.svg') repeat-x;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 5760px;
+    height: 92px;
+    z-index: 10;
+    animation: wave 20s linear infinite;
+}
+
+.hero::before {
+    content: '';
+    background: url('images/hero-waving.svg') repeat-x;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 5760px;
+    height: 92px;
+    opacity: 0.5;
+    z-index: 9;
+    animation: wave 10s linear infinite;
+}
+
+@keyframes wave {
+    0% { margin-left: 0; }
+    100% { margin-left: -1440px; }
+}
+
+/* Hero Text */
+.hero h1 {
+    font-size: 4rem; /* Adjust size */
+    font-family: 'Cormorant Garamond', serif; /* Correct font */
+    font-weight: 700;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 20;
+    width: 90%; /* Ensures good scaling */
+}
+
+/* Scaling the text for different screens */
+.hero h1 {
+    font-size: 2rem; /* Mobile */
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 1rem; /* Default */
+}
+
+@media (min-width: 640px) { /* Small screens */
+    .hero h1 {
+        font-size: 3rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 768px) { /* Tablets */
+    .hero h1 {
+        font-size: 4rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 1024px) { /* Large screens */
+    .hero h1 {
+        font-size: 5rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+.hero p {
+    font-size: 1rem; /* Adjust subtitle size */
+    font-weight: 400;
+    margin-top: -10px;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Custom Heading Styles */
+.hero-title {
+    font-size: 2rem; /* Adjust the size */
+    line-height: 1.2; /* Adjust spacing between lines */
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 110px; /* Adjust spacing from top */
+}
+
+
+/* Navigation */
+nav {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    display: flex;
+    gap: 20px;
+    z-index: 50;
+}
+
+nav a {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffcc00;
+}
+
+.gallery-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 1px;
+    transition: transform 0.4s ease-in-out;
+}
+
+.gallery-img:hover {
+    transform: scale(1.3);
+}
+
+.activity-card {
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.activity-card img, .activity-card video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease-in-out;
+}
+
+.activity-card:hover img {
+    transform: scale(1.3);
+}
+
+.form-container {
+    max-width: 700px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+label, input, textarea, select {
+    font-family: 'Poppins', sans-serif;
+}
